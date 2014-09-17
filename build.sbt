@@ -1,3 +1,7 @@
+haxeJavaSettings
+
+haxeOptions in Compile ++= Seq("-dce", "no", "haxe.unit.TestRunner")
+
 name := "haxe-unit-interface"
 
 organization := "com.qifun"

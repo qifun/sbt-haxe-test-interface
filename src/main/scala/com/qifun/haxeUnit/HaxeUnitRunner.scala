@@ -4,6 +4,8 @@ import org.scalatools.testing.Runner2
 import org.scalatools.testing.Fingerprint
 import org.scalatools.testing.EventHandler
 import org.scalatools.testing.Logger
+import haxe.unit.TestRunner
+import haxe.unit.TestCase
 
 final class HaxeUnitRunner(
   private val testClassLoader: ClassLoader,
@@ -14,7 +16,19 @@ final class HaxeUnitRunner(
     fingerprint: Fingerprint,
     eventHandler: EventHandler,
     args: Array[String]): Unit = {
-    println("########################: " + testClassName)
+    try {
+      val testRunner = new TestRunner
+      Class.forName(testClassName, true, testClassLoader).newInstance match {
+        case testInstance: TestCase =>
+          testRunner.add(testInstance)
+          testRunner.run()
+      }
+    } catch {
+      case e: ClassNotFoundException =>
+        println("The test class not found: " + e)
+      case e: Exception =>
+        println(e)
+    }
   }
 
 }
