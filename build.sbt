@@ -1,7 +1,5 @@
 crossBuildingSettings
 
-sbtPlugin := true
-
 name := "haxe-unit-interface"
 
 organization := "com.qifun"
@@ -14,7 +12,7 @@ version := "0.0.1-SNAPSHOT"
 
 CrossBuilding.crossSbtVersions := Seq("0.13")
 
-description := "The Haxe unit test plugins for sbt."
+description := "The Haxe unit interface framework for sbt."
 
 homepage := Some(url("https://github.com/Atry/stateless-future"))
 
