@@ -1,5 +1,3 @@
-crossBuildingSettings
-
 name := "haxe-unit-interface"
 
 organization := "com.qifun"
@@ -10,7 +8,9 @@ scalacOptions += "-feature"
 
 version := "0.0.1-SNAPSHOT"
 
-CrossBuilding.crossSbtVersions := Seq("0.13")
+crossScalaVersions := Seq("2.10.4", "2.11.2")
+
+libraryDependencies += "org.scala-sbt" % "test-interface" % "1.0"
 
 description := "The Haxe unit interface framework for sbt."
 
