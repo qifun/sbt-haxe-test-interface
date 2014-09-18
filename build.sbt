@@ -1,6 +1,8 @@
 haxeJavaSettings
 
-haxeOptions in Compile ++= Seq("-dce", "no", "haxe.unit.TestRunner")
+haxeOptions in Compile ++= Seq("-dce", "no")
+
+haxeOptions in Compile ++= Seq("--macro", "include('haxe.unit')")
 
 name := "haxe-unit-interface"
 
