@@ -1,3 +1,5 @@
+haxeSettings
+
 haxeJavaSettings
 
 haxeOptions in Compile ++= Seq("-dce", "no")
