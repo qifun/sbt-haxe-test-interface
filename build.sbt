@@ -4,9 +4,9 @@ haxeOptions in Compile ++= Seq("-dce", "no")
 
 haxeOptions in Compile ++= Seq("--macro", "include('haxe.unit')")
 
-name := "haxe-unit-interface"
+name := "test-interface"
 
-organization := "com.qifun"
+organization := "com.qifun.sbt-haxe"
 
 scalacOptions += "-deprecation"
 
