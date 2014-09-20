@@ -20,6 +20,18 @@ crossScalaVersions := Seq("2.10.4", "2.11.2")
 
 libraryDependencies += "org.scala-sbt" % "test-interface" % "1.0"
 
+doc in Compile :=  {
+  (doc in Compile).result.value.toEither match {
+    case Left(_) => {
+      // Ignore error
+      (target in doc in Compile).value
+    }
+    case Right(right) => {
+      right
+    }
+  }
+}
+
 description := "The Haxe unit interface framework for sbt."
 
 homepage := Some(url("https://github.com/qifun/sbt-haxe-test-interface"))
