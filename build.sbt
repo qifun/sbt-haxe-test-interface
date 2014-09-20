@@ -14,7 +14,7 @@ scalacOptions += "-deprecation"
 
 scalacOptions += "-feature"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.1.0-SNAPSHOT"
 
 crossScalaVersions := Seq("2.10.4", "2.11.2")
 
@@ -22,7 +22,7 @@ libraryDependencies += "org.scala-sbt" % "test-interface" % "1.0"
 
 description := "The Haxe unit interface framework for sbt."
 
-homepage := Some(url("https://github.com/Atry/stateless-future"))
+homepage := Some(url("https://github.com/qifun/sbt-haxe-test-interface"))
 
 startYear := Some(2014)
 
@@ -36,9 +36,9 @@ publishTo <<= (isSnapshot) { isSnapshot: Boolean =>
 }
 
 scmInfo := Some(ScmInfo(
-  url("https://bitbucket.org/qforce/haxe-unit-interface"),
-  "scm:git:https://bitbucket.org/qforce/ai-demo.git",
-  Some("scm:git:git@bitbucket.org:qforce/haxe-unit-interface.git")))
+  url("https://github.com/github/sbt-haxe-test-interface"),
+  "scm:git:https://github.com/github/sbt-haxe-test-interface.git",
+  Some("scm:git:git@github.com:github/sbt-haxe-test-interface.git")))
 
 pomExtra :=
   <developers>
