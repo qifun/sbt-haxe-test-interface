@@ -31,5 +31,9 @@ final class HaxeUnitEventHandler(
   final def testSuccess(testName: String): Unit = {
     eventHandler.handle(new HaxeUnitEvent(testName, "The Haxe unit test success!", Result.Success))
   }
+  
+  final def testSkip(testName: String): Unit = {
+    eventHandler.handle(new HaxeUnitEvent(testName, "The Haxe unit test skipped!", Result.Skipped))
+  }
 
 }

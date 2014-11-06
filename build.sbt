@@ -6,6 +6,8 @@ haxeOptions in Compile ++= Seq("-dce", "no")
 
 haxeOptions in Compile ++= Seq("--macro", "include('haxe.unit')")
 
+haxeOptions in Test ++= Seq("--macro", "exclude('haxe.unit')")
+
 name := "test-interface"
 
 organization := "com.qifun.sbt-haxe"

@@ -25,6 +25,7 @@ import haxe.unit.TestRunner
 import haxe.unit.TestCase
 import org.scalatools.testing.Event
 import org.scalatools.testing.Result
+import scala.util.matching.Regex
 
 final class HaxeUnitRunner(
   private val testClassLoader: ClassLoader,
@@ -35,8 +36,29 @@ final class HaxeUnitRunner(
     fingerprint: Fingerprint,
     eventHandler: EventHandler,
     args: Array[String]): Unit = {
+    if (testClassName.equals("haxe.unit.TestCase")) {
+      return
+    }
     val haxeUnitLogger = new HaxeUnitLogger(loggers)
     val haxeUnitEventHandler = new HaxeUnitEventHandler(eventHandler, haxeUnitLogger)
+    for (arg <- args) {
+      if (arg.startsWith("--tests=")) {
+        val testFilters = arg.substring(8).split("\\,")
+        if (testFilters.length > 0) {
+          for (testPatern <- testFilters) {
+            val testRegex = new Regex(testPatern)
+            if (!testRegex.findAllIn(testClassName).hasNext) {
+              haxeUnitEventHandler.testSkip(testClassName)
+              return
+            }
+          }
+        }
+      } else if(arg.startsWith("--include-categories=")) {
+        val includeCategories = arg.substring(21).split("\\,")
+        println(includeCategories)
+        Filter.isInIncludeCategory(includeCategories.asInstanceOf[haxe.root.Array[String]])
+      }
+    }
     try {
       val testRunner = new TestRunner {
         haxe.unit.TestRunner.print = haxeUnitLogger
