@@ -9,11 +9,13 @@ An implementation of [sbt's test interface](https://github.com/sbt/test-interfac
 
   You shoud first Install `sbt-haxe`. Just follow the guilds in https://github.com/qifun/sbt-haxe to install `sbt-haxe`.
 
-  And then add the following line to your `build.sbt`:
+### Step 2:
+
+  Add the following line to your `build.sbt`:
 
     libraryDependencies += "com.qifun.sbt-haxe" %% "test-interface" % "0.1.0" % Test
 
-### Step 2: Put your test sources at src/test-haxe/yourPackage/YourHaxeClassTest.hx
+### Step 3: Put your test sources to src/test-haxe/yourPackage/YourHaxeClassTest.hx
 
 ```haxe
 package yourPackage;
