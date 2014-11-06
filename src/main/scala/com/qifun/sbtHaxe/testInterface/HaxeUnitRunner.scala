@@ -53,10 +53,6 @@ final class HaxeUnitRunner(
             }
           }
         }
-      } else if(arg.startsWith("--include-categories=")) {
-        val includeCategories = arg.substring(21).split("\\,")
-        println(includeCategories)
-        Filter.isInIncludeCategory(includeCategories.asInstanceOf[haxe.root.Array[String]])
       }
     }
     try {
