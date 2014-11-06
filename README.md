@@ -41,3 +41,31 @@ $ sbt
 [success] Total time: 0 s, completed 2014-11-6 19:12:47
 >
 ```
+
+## Filter test
+  `sbt-haxe-test-interface` has two methods to filter tests.
+  
+### method 1:
+  
+  Use the `--tests` flag to select the unit tests you need to test. For example, just add the following lines to your project's `build.sbt`: 
+    testOptions += Tests.Argument(com.qifun.sbtHaxe.HaxePlugin.HaxeUnit, "--tests=<<Your Unit Test Class Name Regex>>")
+    
+### method 2:
+  
+  Use the `Filter.excludeTestByMeta` macros to exclude the test method you don't need to test. For example:
+
+```haxe
+package yourPackage;
+import haxe.unit.TestCase;
+@:build(com.qifun.sbtHaxe.testInterface.Filter.excludeTestByMeta(":excludeTest"))
+class FilterTest extends TestCase
+{
+  @:excludeTest
+  public function testTest()
+  {
+    assertTrue(false);
+  }
+}
+```
+
+  And then the `testTest()` method will not be run!
