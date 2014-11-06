@@ -1,4 +1,7 @@
-sbt-haxe-test-interface
+# sbt-haxe-test-interface
+
+<div align="right"><a href="https://travis-ci.org/qifun/sbt-haxe-test-interface"><img alt="Build Status" src="https://travis-ci.org/qifun/sbt-haxe-test-interface.png?branch=master"/></a></div>
+
 =======================
 
 An implementation of [sbt's test interface](https://github.com/sbt/test-interface) for haXe unit test. This allows you to run haXe unit tests from [sbt](http://www.scala-sbt.org/).
