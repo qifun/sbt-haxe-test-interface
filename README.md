@@ -1,7 +1,7 @@
 sbt-haxe-test-interface
 =======================
 
-An implementation of [sbt's test interface](https://github.com/sbt/test-interface) for haXe unit. This allows you to run haXe unit tests from [sbt](http://www.scala-sbt.org/).
+An implementation of [sbt's test interface](https://github.com/sbt/test-interface) for haXe unit test. This allows you to run haXe unit tests from [sbt](http://www.scala-sbt.org/).
 
 ## Usage
 
