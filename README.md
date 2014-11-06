@@ -64,11 +64,11 @@ import haxe.unit.TestCase;
 class FilterTest extends TestCase
 {
   @:excludeTest
-  public function testTest()
+  public function testExample()
   {
     assertTrue(false);
   }
 }
 ```
 
-  And then the `testTest()` method will not be run!
+  And then the `testExample()` method will not be run!
