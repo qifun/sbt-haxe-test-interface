@@ -7,7 +7,7 @@ An implementation of [sbt's test interface](https://github.com/sbt/test-interfac
 
 ### Step 1: Install [sbt-haxe](https://github.com/qifun/sbt-haxe)
 
-  You shoud first Install `sbt-haxe`. Just follow the guilds to install `sbt-haxe`.
+  You shoud first Install `sbt-haxe`. Just follow the guilds in https://github.com/qifun/sbt-haxe to install `sbt-haxe`.
 
   And then add the following line to your `build.sbt`:
 
