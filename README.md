@@ -52,7 +52,7 @@ $ sbt
   
 ### method 1:
   
-  Use the `--tests` flag to select the unit tests you need to test. For example, just add the following lines to your project's `build.sbt`: 
+  Use the `--tests` flag to select the unit tests you need to test. For example, just edit the following lines and then add it to your project's `build.sbt`: 
   
     testOptions += Tests.Argument(com.qifun.sbtHaxe.HaxePlugin.HaxeUnit, "--tests=<<Your Unit Test Class Name Regex>>")
     
