@@ -4,10 +4,14 @@ before_install:
  - travis_retry sudo add-apt-repository ppa:eyecreate/haxe -y
  - travis_retry sudo apt-get update -qq
  - travis_retry sudo apt-get install -qq neko ocaml
- - travis_retry git clone --recursive --depth 1 --branch last-compilable-version https://github.com/qifun/haxe.git
- - (cd haxe && make && sudo make install)
- - travis_retry sudo haxelib setup .haxelib
- - travis_retry sudo haxelib install hxjava
+ - haxe_file=haxe_latest.tar.gz
+ - travis_retry wget http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/linux64/$haxe_file
+ - sudo tar zxvf $haxe_file
+ - sudo mv haxe-*/ haxe/
+ - export PATH=$PATH:`pwd`/haxe
+ - export HAXE_STD_PATH=`pwd`/haxe/std
+ - travis_retry haxelib setup .haxelib
+ - travis_retry haxelib install hxjava
 
 scala:
   - 2.10.4
