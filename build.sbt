@@ -1,7 +1,3 @@
-haxeSettings
-
-haxeJavaSettings
-
 haxeOptions in Compile ++= Seq("-dce", "no")
 
 haxeOptions in Compile ++= Seq("--macro", "include('haxe.unit')")
