@@ -16,9 +16,11 @@ An implementation of [sbt's test interface](https://github.com/sbt/test-interfac
 
   Add the following line to your `build.sbt`:
 
-    libraryDependencies += "com.qifun.sbt-haxe" %% "test-interface" % "0.1.1" % Test
-    
-    haxeOptions in Test ++= Seq("--macro", "include('haxe.unit')")
+``` sbt
+libraryDependencies += "com.qifun.sbt-haxe" %% "test-interface" % "0.1.1" % Test
+
+haxeOptions in Test ++= Seq("--macro", "include('haxe.unit')")
+```
 
 ### Step 3: Put your test sources to src/test-haxe/yourPackage/YourHaxeClassTest.hx
 
@@ -51,6 +53,7 @@ $ sbt
 
 ## Filter test
   Use the `--tests` flag to select the unit tests you need to test. For example, just edit the following lines and then add it to your project's `build.sbt`: 
-  
-    testOptions += Tests.Argument(com.qifun.sbtHaxe.HaxePlugin.HaxeUnit, "--tests=<<Your Unit Test Class Name Regex>>")
-    
+
+``` sbt
+testOptions += Tests.Argument(com.qifun.sbtHaxe.HaxePlugin.HaxeUnit, "--tests=<<Your Unit Test Class Name Regex>>")
+```    
