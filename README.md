@@ -20,6 +20,8 @@ An implementation of [sbt's test interface](https://github.com/sbt/test-interfac
 libraryDependencies += "com.qifun.sbt-haxe" %% "test-interface" % "0.1.1" % Test
 
 haxeOptions in Test ++= Seq("--macro", "exclude('haxe.unit')")
+
+haxeOptions in Test ++= Seq("-dce", "no")
 ```
 
 ### Step 3: Put your test sources to src/test-haxe/yourPackage/YourHaxeClassTest.hx
