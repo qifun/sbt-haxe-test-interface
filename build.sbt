@@ -46,9 +46,9 @@ publishTo <<= (isSnapshot) { isSnapshot: Boolean =>
 }
 
 scmInfo := Some(ScmInfo(
-  url("https://github.com/github/sbt-haxe-test-interface"),
-  "scm:git:https://github.com/github/sbt-haxe-test-interface.git",
-  Some("scm:git:git@github.com:github/sbt-haxe-test-interface.git")))
+  url("https://github.com/qifun/sbt-haxe-test-interface"),
+  "scm:git:https://github.com/qifun/sbt-haxe-test-interface.git",
+  Some("scm:git:git@github.com:qifun/sbt-haxe-test-interface.git")))
 
 pomExtra :=
   <developers>
